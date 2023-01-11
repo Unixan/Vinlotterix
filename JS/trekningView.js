@@ -5,10 +5,10 @@ function updateTrekningView() {
   model.participants.map(
     (names, index) =>
       (html += /*HTML*/ `
-  <li>${names.name}</li><input type="checkbox" ${
+  <div>${names.name}</li><input type="checkbox" ${
         names.joining ? "checked" : ""
-      } oninput="model.participants[index].joining = !model.participants[index].joining; updateTrekningView()"/>
-  `)
+      } oninput="model.participants[${index}].joining = !model.participants[${index}].joining; updateTrekningView()"/>
+   </div>`)
   );
   document.getElementById("app").innerHTML = html;
 }
