@@ -1,6 +1,6 @@
 const model = {
   // app
-  app: { state: "trekningView" },
+  app: { state: "editView" },
 
   // input
   howManyWinners: 1,
