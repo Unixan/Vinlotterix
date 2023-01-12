@@ -1,10 +1,11 @@
 const model = {
   // app
-  app: { state: "editView" },
+  app: { state: "trekningView" },
 
   // input
   howManyWinners: 1,
   addName: "",
+  noOfWinners: 1,
   // data
   participants: [
     { id: 1, name: "Nils", joining: false },

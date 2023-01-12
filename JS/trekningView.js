@@ -20,6 +20,7 @@ function updateTrekningView() {
   );
   html +=/*HTML*/ `
   </table><br>
+  <input type="number"/>
   <button onclick="goToEditView()">Rediger liste</button>
   `;
   document.getElementById("app").innerHTML = html;
