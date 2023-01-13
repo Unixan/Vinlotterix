@@ -26,13 +26,16 @@ function doRaffle() {
   if (possibleWinners <= 0) {
     alert("Du må ha minst 1 deltaker!");
     model.howManyWinners = 1;
+  } else {
+    console.log(possibleWinners)
+    for (let i = 0; i < possibleWinners; i++) {
+      let randomNum = 0;
+      randomNum = Math.floor(Math.random() * possibleWinners);
+
+      console.log('test 3');
+    }
+    console.log('test 2');
   }
-  for (let i = 0; i < possibleWinners.length; i++) {
-    let randomNum = 0;
-    randomNum = Math.floor(Math.random() * possibleWinners);
-    console.log('test' + randomNum);
-  }
-  console.log(possibleWinners);
   updateView();
 }
 
