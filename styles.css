@@ -1,18 +1,26 @@
 table {
-    border-collapse: collapse;
+  border-collapse: collapse;
 }
 
 th {
   width: 100px;
 }
 
-td{
-    border: solid 2px black;
-    padding: 2px;
-    font-weight: bolder;
+td {
+  border: solid 2px black;
+  padding: 2px;
+  font-weight: bolder;
 }
 
 td.trekkes {
-width: 100px;
-text-align: center;
+  width: 100px;
+  text-align: center;
+}
+
+input.raffle {
+  width: 30px;
+}
+
+button.raffle{
+  width: 100px;
 }

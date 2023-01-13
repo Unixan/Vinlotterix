@@ -5,12 +5,14 @@ const model = {
   // input
   howManyWinners: 1,
   addName: "",
-  noOfWinners: 1,
+
   // data
+  raffleParticipants: [],
   participants: [
     { id: 1, name: "Nils", joining: false },
     { id: 2, name: "Arne", joining: false },
     { id: 3, name: "Bjarne", joining: true },
     { id: 4, name: "Petter", joining: false },
   ],
+  winners: [],
 };

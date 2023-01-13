@@ -1,4 +1,5 @@
 function updateTrekningView() {
+ getParticipants()
   html = /*HTML*/ `
     <h1>Vinlotterix</h1>
   <table>
@@ -18,9 +19,16 @@ function updateTrekningView() {
       </td>
     </tr>`)
   );
-  html +=/*HTML*/ `
+  html += /*HTML*/ `
   </table><br>
-  <input type="number"/>
+  <input class="raffle" type="number" value="${
+    model.howManyWinners
+  }" min="1" max="10" oninput="model.howManyWinners=this.value"/>
+  <button onclick="decreaseWinners()">-</button>
+  <button onclick="increaseWinners()">+</button>
+  <button onclick="doRaffle()" class="raffle">Trekk ${
+    model.howManyWinners == 1 ? "vinner" : "vinnere"
+  }</button><br><br>
   <button onclick="goToEditView()">Rediger liste</button>
   `;
   document.getElementById("app").innerHTML = html;

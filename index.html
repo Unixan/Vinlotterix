@@ -21,7 +21,7 @@
     <script>
       updateView();
       function updateView() {
-        let state = model.app.state;
+        const state = model.app.state;
         if (state === "trekningView") updateTrekningView();
         else if (state === "editView") updateEditView();
         else if (state === "trukketView") updateTrukketView();
