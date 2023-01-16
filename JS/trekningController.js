@@ -21,20 +21,31 @@ function increaseWinners() {
 }
 
 function doRaffle() {
-  let possibleWinners = model.howManyWinners;
-  let raffleParty = model.raffleParticipants;
-  if (possibleWinners <= 0) {
+  let participants = model.raffleParticipants;
+  let possibleIndex = model.raffleParticipants.length;
+  let numberOfDraws = model.howManyWinners;
+  let winners = {
+    raffleNo: model.winners.length + 1,
+    date: getDate(),
+    winners: [],
+  };
+  let order = 1;
+  if (possibleIndex <= 0) {
     alert("Du må ha minst 1 deltaker!");
-    model.howManyWinners = 1;
   } else {
-    console.log(possibleWinners)
-    for (let i = 0; i < possibleWinners; i++) {
-      let randomNum = 0;
-      randomNum = Math.floor(Math.random() * possibleWinners);
-
-      console.log('test 3');
+    for (let i = 0; i < numberOfDraws; i++) {
+      randomIndex = Math.floor(Math.random() * possibleIndex);
+      winners.winners.push({
+        place: order,
+        name: participants[randomIndex].name,
+      });
+      participants.splice(randomIndex, 1);
+      possibleIndex--;
+      order++;
     }
-    console.log('test 2');
+    model.winners.push(winners)
+    console.log(model.winners);
+    model.app.state = 'trukketView'
   }
   updateView();
 }
@@ -48,4 +59,13 @@ function getParticipants() {
     }
     model.raffleParticipants = participants;
   });
+}
+
+function getDate() {
+  rawDate = new Date();
+  date = rawDate.getDate();
+  month = rawDate.getMonth() + 1;
+  year = rawDate.getFullYear();
+  newDate = date + '/' + month + ' - ' + year
+  return newDate
 }

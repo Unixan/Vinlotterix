@@ -1,5 +1,5 @@
 function updateTrekningView() {
- getParticipants()
+  getParticipants();
   html = /*HTML*/ `
     <h1>Vinlotterix</h1>
   <table>
@@ -15,7 +15,7 @@ function updateTrekningView() {
         type="checkbox" ${names.joining ? "checked" : ""} 
         oninput=
         "model.participants[${index}].joining = !model.participants[${index}].joining;
-         updateTrekningView()"/>
+         updateView()"/>
       </td>
     </tr>`)
   );
