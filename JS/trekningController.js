@@ -27,6 +27,8 @@ function doRaffle() {
   let winners = {
     raffleNo: model.winners.length + 1,
     date: getDate(),
+    contenders: possibleIndex,
+    winnersDrawn: numberOfDraws,
     winners: [],
   };
   let order = 1;
@@ -43,9 +45,9 @@ function doRaffle() {
       possibleIndex--;
       order++;
     }
-    model.winners.push(winners)
+    model.winners.push(winners);
     console.log(model.winners);
-    model.app.state = 'trukketView'
+    model.app.state = "trukketView";
   }
   updateView();
 }
@@ -66,6 +68,6 @@ function getDate() {
   date = rawDate.getDate();
   month = rawDate.getMonth() + 1;
   year = rawDate.getFullYear();
-  newDate = date + '/' + month + ' - ' + year
-  return newDate
+  newDate = date + "/" + month + " - " + year;
+  return newDate;
 }
