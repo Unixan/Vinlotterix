@@ -12,12 +12,12 @@ function updateTrukketView() {
       <h4>Vinnere:</h4>`;
     for (i = 0; i < raffle.winners.length; i++) {
       winner = model.winners[x].winners[i];
-      place = winner.place
-      html+= /*HTML*/`
+      place = winner.place;
+      html += /*HTML*/ `
       <p>Plass nummer ${place}: ${winner.name}</p>
       `;
     }
-    console.log(previousRaffles[x].date);
   }
+  html += `<button onclick="model.app.state = 'trekningView'; updateView()">Tilbake</button>`;
   document.getElementById("app").innerHTML = html;
 }

@@ -16,8 +16,12 @@ function updateEditView() {
   );
   html += /*HTML*/ `
 </table><br>
-<input type="text" value="${model.addName}" oninput="model.addName=this.value"/>
-<button onclick="addParticipant()">Legg til</button><br><br><button onclick="model.app.state = 'trekningView'; updateView()">Avbryt</button> 
+<input id="addUser" onkeydown='if(event.key === "Enter") addParticipant()' 
+type="text" 
+value="${model.addName}" 
+oninput="model.addName=this.value"/>
+<button onclick="addParticipant()">Legg til</button><br><br><button onclick="model.app.state = 'trekningView'; updateView()">Tilbake</button> 
 `;
-  document.getElementById("app").innerHTML = html;
+document.getElementById("app").innerHTML = html;
+document.getElementById("addUser").focus();
 }
