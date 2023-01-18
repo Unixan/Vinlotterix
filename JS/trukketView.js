@@ -1,10 +1,9 @@
 function updateTrukketView() {
-  let previousRaffles = []
-  previousRaffles = model.winners.reverse();
+  previousRaffles = model.winners;
   html = `
       <h1>Vinnere</h1>
   `;
-  for (let x = 0; x < previousRaffles.length; x++) {
+  for (let x = previousRaffles.length - 1; x >= 0; x--) {
     raffle = previousRaffles[x];
 
     html += `<h3>Trekning utført ${previousRaffles[x].date}</h3>

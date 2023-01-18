@@ -4,15 +4,22 @@ function deleteUser(index) {
 }
 
 function addParticipant() {
-  let newId = findNewId();
-  let newP = {
-    id: newId,
-    name: model.addName,
-    joining: false,
+  if (model.addName.replaceAll(" ", "").length < 3) {
+    alert("Navnet må ha minst 3 bokstaver");
+    model.addName = "";
+    updateView();
+  } else {
+    let newId = findNewId();
+    let newP = {
+      id: newId,
+      name: model.addName,
+      joining: false,
+    };
+    model.participants.push(newP);
+    console.log(model.addName.trim().length);
+    model.addName = "";
+    updateView();
   }
-  model.participants.push(newP)
-  model.addName = '';
-  updateView()
 }
 
 function findNewId() {
