@@ -8,7 +8,7 @@ function updateTrekningView() {
     </tr>`;
   model.participants.map(
     (names, index) =>
-      (html += /*HTML*/ `
+      (html +=  `
     <tr>
       <td>${names.name}</td>
       <td class="trekkes"><input 
@@ -19,7 +19,7 @@ function updateTrekningView() {
       </td>
     </tr>`)
   );
-  html += /*HTML*/ `
+  html +=`
   </table><br>
   <input class="raffle" type="number" value="${
     model.howManyWinners
