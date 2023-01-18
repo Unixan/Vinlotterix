@@ -11,7 +11,8 @@ function updateEditView() {
       (html += /*HTML*/ `
           <tr>
             <td>${names.name}</td>
-            <td class="trekkes"> <button onclick="deleteUser(${index})">Slett</button>
+            <td class="trekkes">
+            <button onclick="deleteUser(${index})">Slett</button>
           </tr>`)
   );
   html += /*HTML*/ `
@@ -20,8 +21,9 @@ function updateEditView() {
 type="text" 
 value="${model.addName}" 
 oninput="model.addName=this.value"/>
-<button onclick="addParticipant()">Legg til</button><br><br><button onclick="model.app.state = 'trekningView'; updateView()">Tilbake</button> 
+<button onclick="addParticipant()">Legg til</button><br><br>
+<button onclick="model.app.state = 'trekningView'; updateView()">Tilbake</button> 
 `;
-document.getElementById("app").innerHTML = html;
-document.getElementById("addUser").focus();
+  document.getElementById("app").innerHTML = html;
+  document.getElementById("addUser").focus();
 }

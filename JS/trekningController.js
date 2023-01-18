@@ -46,8 +46,9 @@ function doRaffle() {
       order++;
     }
     model.winners.push(winners);
-    console.log(model.winners);
     model.app.state = "trukketView";
+    model.howManyWinners = 1;
+    resetJoining();
   }
   updateView();
 }
@@ -70,4 +71,12 @@ function getDate() {
   year = rawDate.getFullYear();
   newDate = date + "/" + month + " - " + year;
   return newDate;
+}
+
+function resetJoining() {
+  model.participants.map((name, index) => {
+    if(name.joining){
+      model.participants[index].joining = !model.participants[index].joining
+    }
+  })
 }
