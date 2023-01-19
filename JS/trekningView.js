@@ -8,7 +8,7 @@ function updateTrekningView() {
     </tr>`;
   model.participants.map(
     (names, index) =>
-      (html += `
+      (html += /*HTML*/ `
     <tr>
       <td>${names.name}</td>
       <td class="trekkes"><input 
@@ -19,7 +19,7 @@ function updateTrekningView() {
       </td>
     </tr>`)
   );
-  html += `
+  html += /*HTML*/ `
   </table><br>
   <input class="raffle" type="number" value="${
     model.howManyWinners
@@ -32,5 +32,4 @@ function updateTrekningView() {
   <button onclick="goToEditView()">Rediger liste</button>
   `;
   document.getElementById("app").innerHTML = html;
-  document.getElementById("raffleBtn").disabled = true;
 }

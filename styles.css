@@ -1,3 +1,16 @@
+body {
+  background-image: url("IMG/Background.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
 table {
   border-collapse: collapse;
 }
@@ -21,6 +34,6 @@ input.raffle {
   width: 30px;
 }
 
-button.raffle{
+button.raffle {
   width: 100px;
 }
