@@ -13,13 +13,17 @@ body::-webkit-scrollbar {
 
 table {
   border-collapse: collapse;
+  margin: auto;
 }
 
 th {
-  width: 100px;
+  min-width: 100px;
+  background-color: black;
+  width: fit-content;
 }
 
-td {
+td,
+th {
   border: solid 2px black;
   padding: 2px;
   font-weight: bolder;
@@ -36,4 +40,29 @@ input.raffle {
 
 button.raffle {
   width: 100px;
+}
+
+div.mainWindow {
+  background-color: rgb(131, 17, 0);
+  border: solid black 3px;
+  width: fit-content;
+  height: fit-content;
+  padding: 10px;
+  color: white;
+  -webkit-box-shadow: 5px 5px 15px 5px #000000;
+  box-shadow: 5px 5px 15px 5px #000000;
+  margin: auto;
+}
+
+h1 {
+  font-family: "Courier New", Courier, monospace;
+  letter-spacing: 2px;
+  word-spacing: 2px;
+  color: #000000;
+  font-weight: 700;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: small-caps;
+  text-transform: none;
+  text-align: center;
 }

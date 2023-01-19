@@ -16,7 +16,6 @@ function addParticipant() {
       joining: false,
     };
     model.participants.push(newP);
-    console.log(model.addName.trim().length);
     model.addName = "";
     updateView();
   }
