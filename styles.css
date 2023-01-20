@@ -17,7 +17,7 @@ table {
 }
 
 th {
-  min-width: 100px;
+  min-width: 120px;
   background-color: black;
   width: fit-content;
 }
@@ -44,14 +44,22 @@ button.raffle {
 
 div.mainWindow {
   background-color: rgb(131, 17, 0);
-  border: solid black 3px;
+  min-width: 320px;
   width: fit-content;
+  border: solid black 3px;
   height: fit-content;
   padding: 10px;
   color: white;
   -webkit-box-shadow: 5px 5px 15px 5px #000000;
   box-shadow: 5px 5px 15px 5px #000000;
   margin: auto;
+  padding-bottom: 20px;
+
+}
+
+div.table {
+  margin: auto;
+  width: fit-content;
 }
 
 h1 {

@@ -5,7 +5,7 @@ function goToEditView() {
 
 function decreaseWinners() {
   if (model.howManyWinners <= 1) {
-    model.howManyWinners = 1;
+    model.howManyWinners = 0;
   } else model.howManyWinners--;
   updateView();
 }
@@ -32,24 +32,22 @@ function doRaffle() {
     winners: [],
   };
   let order = 1;
-  if (possibleIndex <= 0) {
-    alert("Du må ha minst 1 deltaker!");
-  } else {
-    for (let i = 0; i < numberOfDraws; i++) {
-      randomIndex = Math.floor(Math.random() * possibleIndex);
-      winners.winners.push({
-        place: order,
-        name: participants[randomIndex].name,
-      });
-      participants.splice(randomIndex, 1);
-      possibleIndex--;
-      order++;
-    }
-    model.winners.push(winners);
-    model.app.state = "trukketView";
-    model.howManyWinners = 1;
-    resetJoining();
+
+  for (let i = 0; i < numberOfDraws; i++) {
+    randomIndex = Math.floor(Math.random() * possibleIndex);
+    winners.winners.push({
+      place: order,
+      name: participants[randomIndex].name,
+    });
+    participants.splice(randomIndex, 1);
+    possibleIndex--;
+    order++;
   }
+  model.winners.push(winners);
+  model.app.state = "trukketView";
+  model.howManyWinners = 1;
+  resetJoining();
+
   updateView();
 }
 
@@ -75,8 +73,8 @@ function getDate() {
 
 function resetJoining() {
   model.participants.map((name, index) => {
-    if(name.joining){
-      model.participants[index].joining = !model.participants[index].joining
+    if (name.joining) {
+      model.participants[index].joining = !model.participants[index].joining;
     }
-  })
+  });
 }

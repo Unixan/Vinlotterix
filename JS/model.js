@@ -3,7 +3,7 @@ const model = {
   app: { state: "trekningView" },
 
   // input
-  howManyWinners: 1,
+  howManyWinners: 0,
   addName: "",
 
   // data

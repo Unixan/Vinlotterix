@@ -2,6 +2,7 @@ function updateEditView() {
   html = /*HTML*/ `
   <div class="mainWindow">  
       <h1>Rediger medlemmer</h1>
+      <div class="table">  
         <table>
           <tr>
             <th>Navn</th><th>Handling</th>
@@ -23,6 +24,7 @@ function updateEditView() {
       oninput="model.addName=this.value"/>
       <button onclick="addParticipant()">Legg til</button><br><br>
       <button onclick="model.app.state = 'trekningView'; updateView()">Tilbake</button> 
+    </div>
   </div>
 `;
   document.getElementById("app").innerHTML = html;
