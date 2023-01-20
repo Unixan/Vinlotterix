@@ -45,7 +45,7 @@ function doRaffle() {
   }
   model.winners.push(winners);
   model.app.state = "trukketView";
-  model.howManyWinners = 1;
+  model.howManyWinners = 0;
   resetJoining();
 
   updateView();

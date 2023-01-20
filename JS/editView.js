@@ -1,5 +1,5 @@
 function updateEditView() {
-  html = /*HTML*/ `
+  html =  `
   <div class="mainWindow">  
       <h1>Rediger medlemmer</h1>
       <div class="table">  
@@ -9,14 +9,14 @@ function updateEditView() {
           </tr>`;
   model.participants.map(
     (names, index) =>
-      (html += /*HTML*/ `
+      (html +=  `
               <tr>
                 <td>${names.name}</td>
                 <td class="trekkes">
                 <button onclick="deleteUser(${index})">Slett</button>
               </tr>`)
   );
-  html += /*HTML*/ `
+  html +=  `
       </table><br>
       <input id="addUser" onkeydown='if(event.key === "Enter") addParticipant()' 
       type="text" 

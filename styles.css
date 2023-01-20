@@ -54,7 +54,14 @@ div.mainWindow {
   box-shadow: 5px 5px 15px 5px #000000;
   margin: auto;
   padding-bottom: 20px;
-
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  letter-spacing: 2px;
+  word-spacing: 2px;
+  font-weight: normal;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: small-caps;
+  text-transform: none;
 }
 
 div.table {
@@ -72,5 +79,18 @@ h1 {
   font-style: normal;
   font-variant: small-caps;
   text-transform: none;
+  text-align: center;
+}
+
+h4 {
+  text-decoration: underline;
+}
+
+div.winnerPlace {
+  font-weight: bolder;
+}
+
+div.place {
+  padding: 3px;
   text-align: center;
 }
